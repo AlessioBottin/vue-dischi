@@ -47,6 +47,7 @@ export default {
         color: white;
         font-size: 27px;
         margin-bottom: 20px;
+        word-break: break-word;
     }
 
     .author,
