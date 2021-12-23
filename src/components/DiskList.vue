@@ -1,22 +1,25 @@
 <template>
     <div class="disk-list">
         <div class="container">
-            <div class="disk-container">
-                <DiskCard v-for="(disk, index) in disks" :key="index" :diskObject="disk" />
-                
+            <div v-if="disks.length > 0" class="disk-container">
+                <DiskCard v-for="(disk, index) in disks" :key="index" :diskObject="disk" />               
             </div>
+
+            <Loader v-else />
         </div>
     </div>
 </template>
 
 <script>
 import DiskCard from "./DiskCard";
+import Loader from "./Loader";
 import axios from 'axios';
 
 export default {
     name: 'DiskList',
     components: {
         DiskCard,
+        Loader,
     },
     data: function() {
         return {
@@ -35,7 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 .disk-list {
-    background-color: #1e2d3b;
 
     .container {
         padding: 50px 0;

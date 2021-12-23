@@ -25,4 +25,8 @@ export default {
 <style lang="scss">
 @import './style/general';
 @import './style/utilities';
+
+body {
+  background-color: #1e2d3b;
+}
 </style>
